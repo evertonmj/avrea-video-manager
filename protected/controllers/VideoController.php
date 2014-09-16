@@ -132,7 +132,7 @@ class VideoController extends Controller
             if(!empty($_FILES['Filedata']['tmp_name']))
             {
                 $file = pathinfo($_FILES['Filedata']['name']);
-                $fileTypes = array('avi', 'mpeg', 'mp4', 'mpg', 'mkv'); // File extensions
+                $fileTypes = array('avi', 'mpeg', 'mp4', 'mpg', 'mkv', 'webm', 'ogv'); // File extensions
                 $fileSize = $_FILES['Filedata']['size'];
                 
                 if (in_array($file['extension'],$fileTypes)) {

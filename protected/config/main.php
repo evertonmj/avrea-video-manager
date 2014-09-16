@@ -61,8 +61,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=videomanagerdb',
 			'emulatePrepare' => true,
-			'username' => 'videomanager',
-			'password' => 'videomanager',
+			'username' => 'admin',
+			'password' => 'admin',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
