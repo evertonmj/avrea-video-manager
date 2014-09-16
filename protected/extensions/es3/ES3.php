@@ -355,8 +355,8 @@ use \Aws\Common\Exception\MultipartUploadException;
             "\t data-setup='{ \"techOrder\": [\"flash\", \"html5\"] }'>\n" .
             "\t <source src=\"".$rmtpUrl."&".$fileExtension.":".$fileName."\"\n"
                 . "\t type='rtmp/".$fileExtension."' />\n".
-            "\t <source src=\"" . $webUrl.$fileName . "\"
-                type=\"video/".$fileExtension."\" />" .
+            "\t <source src=\"" . $webUrl.$fileName . "\"\n"
+                . "\t type=\"video/".$fileExtension."\" />" .
             "\t <p class='vjs-no-js'>Para visualizar este vídeo por favor, \n"
                 . "\t habilite o Javascript e considere atualizar o seu navegador. \n"
                 . "\t <a href='http://videojs.com/html5-video-support/' target='_blank'>\n"
