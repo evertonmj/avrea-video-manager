@@ -352,15 +352,16 @@ use \Aws\Common\Exception\MultipartUploadException;
         $stringVideoPlayer = 
           "<video id='video_".$fileName."' class='video-js vjs-default-skin'\n" . 
             "\t controls preload='auto' width='720' height='480'\n" .
-            "\t data-setup='{\"example_option\":true}'>\n" .
+            "\t data-setup='{ \"techOrder\": [\"flash\", \"html5\"] }'>\n" .
             "\t <source src=\"".$rmtpUrl."&".$fileExtension.":".$fileName."\"\n"
                 . "\t type='rtmp/".$fileExtension."' />\n".
+            "\t <source src=\"" . $webUrl.$fileName . "\"
+                type=\"video/".$fileExtension."\" />" .
             "\t <p class='vjs-no-js'>Para visualizar este vídeo por favor, \n"
                 . "\t habilite o Javascript e considere atualizar o seu navegador. \n"
                 . "\t <a href='http://videojs.com/html5-video-support/' target='_blank'>\n"
                 . "\t Verifique os navegadores que oferecen suporte ao HTML 5</a></p>\n" .
           "</video>\n";
-        
         return $stringPlayerCss . "\n" . $stringPlayerJs  . "\n" .  $stringVideoPlayer;
     }
 } // END class
