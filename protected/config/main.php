@@ -9,32 +9,32 @@ Yii::setPathOfAlias('aws', dirname(__FILE__).'/../extensions/aws');
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Video Manager - Gerenciamento de Vídeos',
+	'name'=>'Avrea Video Manager',
         //tema
         'theme'=>'bootstrap',
         //linguagem padrão
         'language'=>'pt_br',
 	// preloading 'log' component
-	'preload'=>array('log'),
+	//'preload'=>array('log'),
 
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-                'bootstrap.helpers.*'
+    'bootstrap.helpers.*'
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		'gii'=>array(
+		/*'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123456',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
                         'generatorPaths' => array('bootstrap.gii'),
-		),
+		),*/
 	),
-    
+
 	// application components
 	'components'=>array(
                 'bootstrap'=>array(
@@ -61,8 +61,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=videomanagerdb',
 			'emulatePrepare' => true,
-			'username' => 'admin',
-			'password' => 'admin',
+			'username' => '<YOUR-DB-USER>',
+			'password' => '<YOUR-DB-PASSWORD>',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
@@ -82,15 +82,15 @@ return array(
 				),
 			),
 		),
-                'aws'=>array(
-                    'class'=>'aws.aws-autoloader'
-                ),
-                's3'=>array(
-                  'class' => 'ext.es3.ES3', // so the ES3 class must sit at protected/extensions/es3/ES3.php
-                  'aKey' => 'AKIAJ3BKRST5UJGYGTVA', // your account key, obtain from Amazon
-                  'sKey' => 'rTXQypulsBQ9mjP0EsnrAuWNRceruWrkcUPNCdQA', // your secret key, obtain from Amazon
-                  //'region' => 'sa-east-1', //region of the bucket
-                ),
+    'aws'=>array(
+        'class'=>'aws.aws-autoloader'
+    ),
+    's3'=>array(
+      'class' => 'ext.es3.ES3', // so the ES3 class must sit at protected/extensions/es3/ES3.php
+      'aKey' => '<YOUR-ACCOUNT-KEY>', // your account key, obtain from Amazon
+      'sKey' => '<YOUR-SECRET-KEY>', // your secret key, obtain from Amazon
+      //'region' => 'sa-east-1', //region of the bucket
+    ),
 	),
 
 	// application-level parameters that can be accessed
@@ -98,12 +98,11 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
-                'videoUploadDir' => 'files/videos/',
-                //amazon configurations
-                'videoS3Bucket'=>'videocongresso01',
-                'cloudFrontWeb'=>'https://d2jdnwq9ajs5cn.cloudfront.net/',
-                'cloudFrontRTMP'=>'rtmp://s17z6bfw0vxwrz.cloudfront.net/cfx/st/',
-                //'maxUploadFileSize'=>700097152,
-                'maxUploadFileSize'=>700297152,
+    'videoUploadDir' => 'files/videos/', //your folder to upload the videos on S3 bucket
+    //amazon configurations
+    'videoS3Bucket'=>'videocongresso01',
+    'cloudFrontWeb'=>'<YOUR-CLOUDFRONT-WEB-URL>', //cloudfront web url
+    'cloudFrontRTMP'=>'<YOUR-RTMP-CLODUFRONT-URL>', //cloudfront RTMP url
+    'maxUploadFileSize'=>700297152,
 	),
 );
