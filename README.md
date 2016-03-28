@@ -6,7 +6,7 @@ You need to have an account at AWS to use this tool.
 
 1. At AWS you'll need an EC2 Instance to Apache Web Server and MySQL Database Server.
 
-2. You'll need the Yii Framework 1.1. After you place the framework, alter the index.php file to point the correct path to Yii Framework installation.
+2. You'll need the Yii Framework 1.1. After you place the framework, alter the index.php file to point the correct path to Yii Framework installation. I provide one copy at folder "files".
 
 3. You'll need to configure the main.php file located on "protected/config" folder and configure the database, the AWS S3 Bucket and the CloudFront keys.
 
